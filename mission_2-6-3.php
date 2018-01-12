@@ -5,10 +5,10 @@ if (isset($_POST["modify"])){
     $log=file("$filename");
 	$date=date("Y-m-d\TH:i:sP");
     for($i=0;$i<count($log);$i++){
-        $line2 = explode(".'<>'.", $log[$i]);
-        $bno = $_POST["bno"];
-        $name = $_POST['name'];
-        $comment = $_POST['comment'];
+        $line2=explode(".'<>'.", $log[$i]);
+        $bno=$_POST["bno"];
+        $name=$_POST['name'];
+        $comment=$_POST['comment'];
 		$pw=$_POST['password'];
 		//echo $pw;
         if($line2[0]==$bno){
