@@ -34,7 +34,7 @@ setTimeout('myrefresh()',10000);
 
 <body>
 <form action="mission_2-2.php" method="post" class="comment" onsubmit="return InputCheck(this)" name="forum">
-<!-formタグで入力フォームを作って、入力した後、データ値は”mission_1-4.php”まで送る->
+<!-formタグで入力フォームを作って、入力した後、データ値は”mission_2-2.php”まで送る->
 <br><br>
 <div class="thin">
 <!-見出し->
