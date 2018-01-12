@@ -4,12 +4,12 @@ $errMsg="";
 if(!$_POST['number1']){$errMsg="番号を入力してください<br>";}
 if(!$_POST['password2']){$errMsg="パスワードを入力してください<br>";}
 if(!$errMsg){
-        $bno = $_POST["number1"];
+        $bno=$_POST["number1"];
 		$pw=$_POST["password2"];
 		$pw=hash("sha256",$pw);
-        $log = file("$filename");
-        for ($i = 0; $i < count($log); $i++) {			
-            $line = explode(".'<>'.", $log[$i]);
+        $log=file("$filename");
+        for ($i=0; $i<count($log); $i++) {			
+            $line=explode(".'<>'.", $log[$i]);
 			if($line[3]==$pw){
 				if($line[0]==$bno){
 					array_splice($log,$i,1);
