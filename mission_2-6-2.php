@@ -29,6 +29,5 @@ if(!$errMsg){
 ?>
 <?php if($errMsg) {
 	echo "<br><br><br><font color=red>$errMsg</font>";
-        echo '<a href="javascript:history.back(-1);">やり直す</a>';
 	}
 ?>
