@@ -5,12 +5,12 @@ if(!$_POST['number2']){$errMsg="番号を入力してください<br>";}
 if(!$_POST['password3']){$errMsg="パスワードを入力してください<br>";}
 if(!$errMsg){
         $bno=$_POST["number2"];
-		$pw=$_POST["password3"];
-		$pw=hash("sha256",$pw);
+	$pw=$_POST["password3"];
+	$pw=hash("sha256",$pw);
         $log=file("$filename");
         for ($i=0; $i<count($log); $i++) {			
             $line=explode(".'<>'.", $log[$i]);
-			if($line[3]==$pw){
+		if($line[3]==$pw){
 				if ($line[0]==$bno){
 					echo "<br><br><br>";
 					echo "<font color=blue>$line[0]番が編集できます</font><br>";
@@ -21,12 +21,14 @@ if(!$errMsg){
 					      <input type='hidden' name='bno' value='" . $bno . "'>
 					      <input type='hidden' name='password' size='60' value='" . $pw . "'><br>";
                                         echo "</form>";
-                                 }
+                                 }else{$errMsg="パスワードは間違っています";}
 			}
         }
     }
 
 ?>
-<?php if($errMsg) {echo "<font color=red>$errMsg</font>";}?>
-
-
+<?php if($errMsg) {
+	echo "<br><br><br><font color=red>$errMsg</font>";
+        echo '<a href="javascript:history.back(-1);">やり直す</a>';
+	}
+?>
